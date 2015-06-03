@@ -13,13 +13,20 @@ html {
 body {
   overflow: hidden;
   background-color: #484A4E;
-  background-image: url('../img/bg.png');
+  background-image: url('/public/img/bg.png');
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
+}
+
+/* IDS */
+
+#formcontainer{
+  -webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
+  -moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
+  box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
 }
 
 /* Custom page CSS
@@ -30,15 +37,17 @@ body > .container {
   padding: 60px 15px 0;
 }
 
-code {
-  font-size: 80%;
+.navbar-right{
+  margin: 0px;
 }
 
-/* Navbar padding */
-
-.collapsing, .in{
-  padding: 0px 50px 10px 30px;
+.in > .navbar-right, .collapsing > .navbar-right{
   overflow: hidden;
+  margin: 15px 15px 15px 15px;
+}
+
+.navbar-brand{
+  margin-left: 15px;
 }
 
 .media{
@@ -70,12 +79,6 @@ code {
 
   background: #F0F7ED;
   background-image: url('../img/bg.png');
-}
-
-#formcontainer{
-  -webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-  -moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-  box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
 }
 
 .own{
