@@ -19,6 +19,15 @@ module.exports = function(app, io) {
         return io.of(sala_id).password;
     }
 
+    function setPassword(sala_id, s_password) {
+        io.of(sala_id).password = s_password;
+        return "";
+    }
+
+    function getClients(sala_id) {
+        return io.of(sala_id).server.eio.clientsCount;
+    }
+
     function returnError(res, error) {
         res.render('error', {
             error: error
@@ -27,7 +36,7 @@ module.exports = function(app, io) {
 
     var setParams = function(req, res, next) {
         req.sala = req.params.sala ? req.params.sala : "principal";
-        req.password_sala = getPassword(req.sala);
+        req.password_sala = getClients(req.sala) < 1 ? setPassword(req.sala, "") : getPassword(req.sala);
         req.password = req.params.password;
         error.message = "";
         return next();
