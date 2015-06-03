@@ -19,9 +19,12 @@ module.exports = function(app, io) {
         return io.of(sala_id).password;
     }
 
-    function setPassword(sala_id, s_password) {
-        io.of(sala_id).password = s_password;
-        return "";
+    function resetRoom(sala_id) {
+        var room = io.of(sala_id);
+        room.password = null;
+        room.owner = null;
+        room.img = null;
+        return null;
     }
 
     function getClients(sala_id) {
@@ -36,7 +39,8 @@ module.exports = function(app, io) {
 
     var setParams = function(req, res, next) {
         req.sala = req.params.sala ? req.params.sala : "principal";
-        req.password_sala = getClients(req.sala) < 1 ? setPassword(req.sala, "") : getPassword(req.sala);
+        req.password_sala = getClients(req.sala) < 1 ? resetPassword(req.sala) : getPassword(req.sala);
+        console.log(req.password_sala);
         req.password = req.params.password;
         error.message = "";
         return next();
