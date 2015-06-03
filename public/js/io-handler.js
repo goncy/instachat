@@ -105,7 +105,7 @@ function prvDismiss() {
 function replaceURLWithHTMLLinks(text) {
     var exp = /(\b(((https?|ftp|file|):\/\/)|www[.])[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     text = text.replace(/.*?:\/\//g, "");
-    text = text.replace(exp, "<a href='http://$1'>$1</a>");
+    text = text.replace(exp, "<a target='_blank' href='http://$1'>$1</a>");
     return text;
 }
 
