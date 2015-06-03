@@ -39,7 +39,7 @@ module.exports = function(app, io) {
 
     var setParams = function(req, res, next) {
         req.sala = req.params.sala ? req.params.sala : "principal";
-        req.password_sala = getClients(req.sala) < 1 ? resetPassword(req.sala) : getPassword(req.sala);
+        req.password_sala = getClients(req.sala) < 1 ? resetRoom(req.sala) : getPassword(req.sala);
         req.password = req.params.password;
         error.message = "";
         return next();
