@@ -31,51 +31,41 @@ module.exports = function(app, io) {
         return io.of(sala_id).server.eio.clientsCount;
     }
 
-    function returnError(res, error) {
-        res.render('error', {
-            error: error
-        });
-    }
-
     var setParams = function(req, res, next) {
         req.sala = req.params.sala ? req.params.sala : "principal";
         req.password_sala = getClients(req.sala) < 1 ? resetRoom(req.sala) : getPassword(req.sala);
         req.password = req.params.password;
         error.message = "";
         return next();
-    }
+    };
 
     var checkErrors = function(req, res, next) {
-        if (req.password_sala && !req.password) error.message = "Esta sala tiene password";
-        else if (req.password && !req.password_sala) error.message = "Esta sala no tiene password";
-        else if (req.password != req.password_sala) error.message = "La contraseña es incorrecta";
-        else if (req.sala.length > 20) error.message = "Sala con nombre muy largo";
+    	if (req.password && !req.password_sala) next(res.redirect('/'+req.params.sala));
+
+    	if (req.sala.length > 20) next(new Error('Sala con nombre muy largo'));
+        else if (req.password_sala && !req.password) next(new Error('La sala '+req.params.sala+' tiene contraseña'));
+        else if (req.password != req.password_sala) next(new Error('La contraseña para '+req.params.sala+' es incorrecta'));
+        
         return next();
-    }
+    };
 
     var routeHandler = function(req, res) {
         sala = req.params.sala;
-        if (error.message) res.render('error', {
-            error: error.message
-        });
-        else res.render('index', {
+        res.render('index', {
             title: req.sala
         });
-    }
+    };
 
     var checkers = [setParams, checkErrors, routeHandler];
-    //Rutas para la redireccion de la sala
+
     app.get(['/', '/:sala', '/:sala/:password'], checkers);
 
-    app.get('*', function(req, res, next) {
-        error.message = "No se encontro la pagina";
-        next(error);
-    });
+    app.get('*', function(req, res, next){res.redirect('/')});
 
-    // handling 404 errors
     app.use(function(err, req, res, next) {
         res.render('error', {
-            error: err.message || 'Hubo un error, fijate que todo sea correcto'
+            error: err.message || 'Hubo un error, fijate que todo sea correcto',
+            sala: req.sala
         });
     });
 }

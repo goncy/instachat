@@ -4,7 +4,7 @@ var socket = io(), //Creo el socket
         show_sv_notif: true,
         show_cnx_notif: true,
         name_color: "#333",
-        bg_img: "",
+        bg_img: null,
         owner: false
     },
     msg = $('#msg_input'), //Defino la variable del msg input
@@ -51,9 +51,11 @@ function goBot() { //Voy al fondo del div de mensajes
 }
 
 function cambiarBg(img) { //Cambio el fondo
+  if(img){
     $('body').fadeTo('slow', 0.3, function() {
         $(this).css('background-image', 'url(' + img + ')');
     }).fadeTo('slow', 1);
+  }
 }
 
 function setData() { //Guardo los datos del modal de configuracion
@@ -75,14 +77,11 @@ function setData() { //Guardo los datos del modal de configuracion
 }
 
 function setSala() { //Hago seteos a la sala en caso de ser el dueño
-    var imagen = sm_img.val() ? sm_img.val() : 'public/img/bg.png';
-    if (configs.owner) {
-        cambiarBg(imagen);
-        socket.emit('changeRoom', {
-            pass: sm_pass.val(),
-            img: imagen
-        });
-    }
+    cambiarBg(sm_img.val());
+    socket.emit('changeRoom', {
+        pass: sm_pass.val(),
+        img: sm_img.val()
+    });
 }
 
 function redirectSala() { //Redirijo a otra sala
@@ -133,7 +132,8 @@ socket.on('chat message', function(d) {
 });
 
 socket.on('prvt message', function(d) {
-    chat.append($('<div class="media prvt">').html('<div class="media-body"><h5 class="media-heading name" style="color:white; font-weight: bold;">' + d.usr_from + ' > ' + d.usr_to + ':</h5>' + d.msg + '</div>'));
+    var otherChatter = socket.id == d.id_from ? {usr: d.usr_to, id: d.id_to} : {usr: d.usr_from, id: d.id_from};
+    chat.append($('<div class="media prvt">').html('<div class="media-body"><a href="#msg_input"><h5 onclick="sendPrv(\'' + otherChatter.id + '\',\'' + otherChatter.usr + '\');" class="media-heading name" style="color:white; font-weight: bold;">' + d.usr_from + ' > ' + d.usr_to + ':</h5></a>' + d.msg + '</div>'));
     goBot();
 });
 
