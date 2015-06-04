@@ -81,6 +81,22 @@ body > .container {
   background-image: url('../img/bg.png');
 }
 
+.chat2{
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  margin-top: 15%;
+  width: 100%;
+  position: absolute;
+  overflow-x:hidden;
+
+  -webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
+  -moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
+  box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
+
+  background: #F0F7ED;
+  background-image: url('../img/bg.png');
+}
+
 .own{
   background: #D5F7B3;
   -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0,0.50);
