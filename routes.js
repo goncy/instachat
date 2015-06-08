@@ -1,6 +1,5 @@
 var chatter = require('chatter');
 var sala = "";
-var error = new Error();
 
 module.exports = function(app, io) {
     //Seteo de redireccion de sockets
@@ -35,7 +34,6 @@ module.exports = function(app, io) {
         req.sala = req.params.sala ? req.params.sala : "principal";
         req.password_sala = getClients(req.sala) < 1 ? resetRoom(req.sala) : getPassword(req.sala);
         req.password = req.params.password;
-        error.message = "";
         return next();
     };
 

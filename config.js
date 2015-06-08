@@ -9,13 +9,4 @@ module.exports = function(app, express) {
 
     //Declaracion de la carpeta public
     app.use('*/public', express.static('public'));
-
-    // handling 404 errors
-	app.use(function(err, req, res, next) {
-	  if(err.status !== 404) {
-	    return next();
-	  }
-	 
-	  res.send(err.message || '** no unicorns here **');
-	});
 }

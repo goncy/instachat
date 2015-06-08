@@ -56,7 +56,14 @@
 
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script type="text/javascript">function goSala(){window.location.href = '/<%= sala %>/'+ $('#inputPassword').val();}</script>
+        <script type="text/javascript">
+        function goSala(){window.location.href = '/<%= sala %>/'+ $('#inputPassword').val();}
+        function redirectSala(){window.location.href = '/'+$('#sala_red').val();}
+        $(document).ready(function() {
+            $('#sala_red').keyup(function(e) {if (e.keyCode == 13) redirectSala();});
+            $('#inputPassword').keyup(function(e) {if (e.keyCode == 13) goSala();});
+        });
+        </script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

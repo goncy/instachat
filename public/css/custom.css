@@ -1,44 +1,62 @@
-/* Sticky footer styles
--------------------------------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+html{
+    padding-top: 50px;
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  overflow: hidden;
+  background-color: #484A4E;
+  background-image: url('/public/img/bg.png');
+}
+
+.glyphicon {
+  width: 14px;
+  height: 14px;
+  margin-top: 3px;
+  line-height: 14px;
+  vertical-align: text-top;
+}
 
 a:link {
     text-decoration: none;
 }
 
-html {
+.row{
+  height: 100%;
   position: relative;
-  min-height: 100%;
 }
-body {
-  overflow: hidden;
-  background-color: #484A4E;
+
+.no-gutter{
+    padding:0;
+}
+
+.chat{
+  height: -webkit-calc(100% - 43px);
+  /* Firefox */
+  height: -moz-calc(100% - 43px);
+  /* WebKit */
+  height: -webkit-calc(100% - 43px);
+  /* Opera */
+  height: -o-calc(100% - 43px);
+  /* Standard */
+  height: calc(100% - 43px);
+
+  overflow-y: auto;
+
+  background: #F0F7ED;
   background-image: url('/public/img/bg.png');
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
-/* IDS */
-
-#formcontainer{
+.container.bodycontainer{
+  height: 100%;
   -webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
   -moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
   box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-}
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
-body > .container {
-  padding: 60px 15px 0;
-}
-
-.navbar-right{
-  margin: 0px;
 }
 
 .in > .navbar-right, .collapsing > .navbar-right{
@@ -46,55 +64,10 @@ body > .container {
   margin: 15px 15px 15px 15px;
 }
 
-.navbar-brand{
-  margin-left: 15px;
-}
-
+/* CHATS */
 .media{
-  padding: 10px 0px 10px 10px; 
-}
-
-/* Mensajes */
-.chat{
-  font-family: 'Roboto', sans-serif;
-
-  height: -webkit-calc(100% - 93px);
-  /* Firefox */
-  height: -moz-calc(100% - 93px);
-  /* WebKit */
-  height: -webkit-calc(100% - 93px);
-  /* Opera */
-  height: -o-calc(100% - 93px);
-  /* Standard */
-  height: calc(100% - 93px);
-
-  margin: 0px;
-
-  position: absolute;
-  overflow-x:hidden;
-
-  -webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-  -moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-  box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-
-  background: #F0F7ED;
-  background-image: url('../img/bg.png');
-}
-
-.chat2{
-  font-family: 'Roboto', sans-serif;
-  padding: 20px;
-  margin-top: 15%;
-  width: 100%;
-  position: absolute;
-  overflow-x:hidden;
-
-  -webkit-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-  -moz-box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-  box-shadow: 2px 2px 12px 2px rgba(0,0,0,0.34);
-
-  background: #F0F7ED;
-  background-image: url('../img/bg.png');
+  padding: 10px 0px 10px 10px;
+  margin-bottom: 15px;
 }
 
 .own{
@@ -106,6 +79,13 @@ body > .container {
 
 .server{
   background: #15D69B;
+  color: #fff;
+  font-size: 1.2em;
+  text-shadow: 0px 0px 1.5px rgba(79, 79, 79, 1);
+}
+
+.error{
+  background: #E42424;
   color: #fff;
   font-size: 1.2em;
   text-shadow: 0px 0px 1.5px rgba(79, 79, 79, 1);
@@ -140,18 +120,23 @@ body > .container {
   text-shadow: 0px 0px 1px rgba(25, 25, 25, 0.2);
 }
 
-.npr{
-  padding-right: 0px;
+.image{
+  width:25%;
+  height:25%;
+  border: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0,0.50);
+  -moz-box-shadow: 1px 1px 3px -1px rgba(0,0,0,0.50);
+  box-shadow: 1px 1px 3px -1px rgba(0,0,0,0.50);
+  text-shadow: 0px 0px 2px rgba(25, 25, 25, 1);
 }
 
-.npl{
-  padding-left: 0px;
-}
-
-.nmr{
-  margin-right: 0px;
-}
-
-.nml{
-  margin-left: 0px;
+.image:last-child {
+  margin-bottom: 15px;
 }
