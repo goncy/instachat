@@ -18,7 +18,7 @@
     <link href="https://bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet">
     <link href="/public/vendor/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link href="/public/css/custom.css" rel="stylesheet">
-    <!-- <link href="/public/css/dataurl.css" rel="stylesheet"> -->
+    <link href="/public/css/dataurl.css" rel="stylesheet">
     <link rel="shortcut icon" href="public/favicon.ico">
     <link rel="icon" href="/public/favicon.ico">
     <link rel="canonical" href="http://argenchat.herokuapp.com">
@@ -70,15 +70,16 @@
                 <div class="input-group">
                     <span class="input-group-btn">
                         <button class="btn btn-default" data-toggle="modal" data-target="#configModal" type="button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
-                        <button id="prv_kick" style="display: none;" class="btn btn-danger" alt="Expulsar persona" onclick="kickPrv()" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                        <button id="prv_dismiss" style="display: none;" class="btn btn-primary" alt="Cancelar mensaje privado" onclick="unsetPrv()" type="button"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></button>
+                        <button id="prv_kick" style="display:none;" class="btn btn-danger" alt="Expulsar persona" onclick="kickPrv()" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <button id="prv_dismiss" style="display:none;" class="btn btn-primary" alt="Cancelar mensaje privado" onclick="unsetPrv()" type="button"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></button>
                     </span>
                     <input id="msg_input" type="text" maxlength="500" class="form-control" placeholder="Mensaje">
                     <input id="prv_name" type="text" hidden>
                     <input id="prv_id" type="text" hidden>
                     <span class="input-group-btn">
-                        <input id="imagefile" type="file" style="visibility:hidden;height: 0px;width: 0px;" id="imagefile"/>
-                        <button class="btn btn-info" onclick="$('#imagefile').click();" type="button"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+                        <input id="imagefile" type="file" style="display:none;" id="imagefile"/>
+                        <button class="btn btn-info" id="photo_available" onclick="$('#imagefile').click();" type="button"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+                        <button class="btn btn-warning disabled" id="photo_unavailable" style="display:none" type="button"><span class="glyphicon glyphicon-repeat gly-spin" aria-hidden="true"></span></button>
                         <button class="btn btn-default" onclick="emitir()" type="button">Enviar</button>
                     </span>
                 </div>
@@ -154,7 +155,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Error</h4>
+                    <h4 class="modal-title">Notificación</h4>
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
@@ -168,13 +169,13 @@
         </div>
     </div>
 
-    <script src="/public/js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="/public/js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/public/vendor/fancybox/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="/public/js/io-handler.js"></script>
-    <!-- <script type="text/javascript" src="/public/js/peace.min.js"></script> -->
+    <script type="text/javascript" src="/public/js/pace.min.js"></script>
+    <script type="text/javascript" src="/public/js/client-io-handler.js"></script>
 
     <script>
         (function(b, o, i, l, e, r) {

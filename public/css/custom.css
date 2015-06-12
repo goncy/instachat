@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
+/* STRUCTURE */
 html{
     padding-top: 50px;
     height: 100%;
@@ -12,14 +13,6 @@ body{
   overflow: hidden;
   background-color: #484A4E;
   background-image: url('/public/img/bg.png');
-}
-
-.glyphicon {
-  width: 14px;
-  height: 14px;
-  margin-top: 3px;
-  line-height: 14px;
-  vertical-align: text-top;
 }
 
 a:link {
@@ -66,10 +59,11 @@ a:link {
 
 /* CHATS */
 .media{
-  padding: 10px 0px 10px 10px;
+  padding: 10px 10px 10px 10px;
   margin-bottom: 15px;
 }
 
+/* COLORS MEDIS */
 .own{
   background: #D5F7B3;
   -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0,0.50);
@@ -86,6 +80,20 @@ a:link {
 
 .error{
   background: #E42424;
+  color: #fff;
+  font-size: 1.2em;
+  text-shadow: 0px 0px 1.5px rgba(79, 79, 79, 1);
+}
+
+.notif{
+  background: #2780e3;
+  color: #fff;
+  font-size: 1.2em;
+  text-shadow: 0px 0px 1.5px rgba(79, 79, 79, 1);
+}
+
+.media-notif{
+  background: #9954bb;
   color: #fff;
   font-size: 1.2em;
   text-shadow: 0px 0px 1.5px rgba(79, 79, 79, 1);
@@ -120,6 +128,7 @@ a:link {
   text-shadow: 0px 0px 1px rgba(25, 25, 25, 0.2);
 }
 
+/* IMAGE */
 .image{
   width:25%;
   height:25%;
@@ -139,4 +148,54 @@ a:link {
 
 .image:last-child {
   margin-bottom: 15px;
+}
+
+/* GLYPHICON */
+.gly-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.glyphicon {
+  width: 14px;
+  height: 14px;
+  margin-top: 3px;
+  line-height: 14px;
+  vertical-align: text-top;
 }

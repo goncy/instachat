@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'delivery.js' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 warn package.json argenchat@0.0.3 No repository field.
+5 warn package.json chatter@0.0.1 No description
+6 warn package.json chatter@0.0.1 No repository field.
+7 warn package.json chatter@0.0.1 No README data
+8 warn package.json chatter@0.0.1 specifying devDependencies as array is deprecated
+9 warn package.json chatter@0.0.1 specifying optionalDependencies as array is deprecated
+10 warn package.json crypto@0.0.3 crypto is also the name of a node core module.
+11 verbose readDependencies using package.json deps
+12 verbose cache add [ 'delivery.js', null ]
+13 verbose cache add name=undefined spec="delivery.js" args=["delivery.js",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'delivery.js',
+14 verbose parsed url   path: 'delivery.js',
+14 verbose parsed url   href: 'delivery.js' }
+15 silly lockFile 3dfd60d5-delivery-js delivery.js
+16 verbose lock delivery.js C:\Users\Goncy\AppData\Roaming\npm-cache\3dfd60d5-delivery-js.lock
+17 silly lockFile 3dfd60d5-delivery-js delivery.js
+18 silly lockFile 3dfd60d5-delivery-js delivery.js
+19 verbose addNamed [ 'delivery.js', '' ]
+20 verbose addNamed [ null, '*' ]
+21 silly lockFile 010aa579-delivery-js delivery.js@
+22 verbose lock delivery.js@ C:\Users\Goncy\AppData\Roaming\npm-cache\010aa579-delivery-js.lock
+23 silly addNameRange { name: 'delivery.js', range: '*', hasData: false }
+24 verbose request where is /delivery.js
+25 verbose request registry https://registry.npmjs.org/
+26 verbose request id 28df158fcbd25c88
+27 verbose url raw /delivery.js
+28 verbose url resolving [ 'https://registry.npmjs.org/', './delivery.js' ]
+29 verbose url resolved https://registry.npmjs.org/delivery.js
+30 verbose request where is https://registry.npmjs.org/delivery.js
+31 info trying registry request attempt 1 at 15:53:08
+32 http GET https://registry.npmjs.org/delivery.js
+33 http 404 https://registry.npmjs.org/delivery.js
+34 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+34 verbose headers   'content-type': 'application/json',
+34 verbose headers   'cache-control': 'max-age=0',
+34 verbose headers   'content-length': '51',
+34 verbose headers   'accept-ranges': 'bytes',
+34 verbose headers   date: 'Thu, 11 Jun 2015 18:52:59 GMT',
+34 verbose headers   via: '1.1 varnish',
+34 verbose headers   age: '0',
+34 verbose headers   connection: 'keep-alive',
+34 verbose headers   'x-served-by': 'cache-iad2142-IAD',
+34 verbose headers   'x-cache': 'MISS',
+34 verbose headers   'x-cache-hits': '0',
+34 verbose headers   'x-timer': 'S1434048779.194821,VS0,VE60' }
+35 silly registry.get cb [ 404,
+35 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+35 silly registry.get     'content-type': 'application/json',
+35 silly registry.get     'cache-control': 'max-age=0',
+35 silly registry.get     'content-length': '51',
+35 silly registry.get     'accept-ranges': 'bytes',
+35 silly registry.get     date: 'Thu, 11 Jun 2015 18:52:59 GMT',
+35 silly registry.get     via: '1.1 varnish',
+35 silly registry.get     age: '0',
+35 silly registry.get     connection: 'keep-alive',
+35 silly registry.get     'x-served-by': 'cache-iad2142-IAD',
+35 silly registry.get     'x-cache': 'MISS',
+35 silly registry.get     'x-cache-hits': '0',
+35 silly registry.get     'x-timer': 'S1434048779.194821,VS0,VE60' } ]
+36 silly lockFile 010aa579-delivery-js delivery.js@
+37 silly lockFile 010aa579-delivery-js delivery.js@
+38 error 404 404 Not Found: delivery.js
+38 error 404
+38 error 404 'delivery.js' is not in the npm registry.
+38 error 404 You should bug the author to publish it
+38 error 404 It was specified as a dependency of 'argenchat'
+38 error 404
+38 error 404 Maybe try 'npm search delivery'
+38 error 404
+38 error 404 Note that you can also install from a
+38 error 404 tarball, folder, or http url, or git url.
+39 error System Windows_NT 6.1.7601
+40 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "delivery.js"
+41 error cwd c:\nodeapps\argenchat
+42 error node -v v0.10.33
+43 error npm -v 1.4.28
+44 error code E404
+45 verbose exit [ 1, true ]
