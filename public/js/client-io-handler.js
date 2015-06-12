@@ -185,14 +185,13 @@ socket.on('prvt message', function(d) {
 });
 
 socket.on('server message', function(d) {
-    console.log("Server");
     if (configs.show_sv_notif) {
         switch (d.type) {
             case "cnx":
                 if (configs.show_cnx_notif) chat.append($(drawDiv(["server"],2)).html(drawDiv([d.msg],1)));
                 break;
             case "dcnx":
-                if (configs.show_cnx_notif) chat.append($(drawDiv(["server"],2)).html(drawDiv([d.color,d.user],5)));
+                if (configs.show_cnx_notif) chat.append($(drawDiv(["server"],2)).html(drawDiv([d.color,d.usr],5)));
                 break;
             default:
                 if (configs.show_sv_notif) chat.append($(drawDiv(["server"],2)).html(drawDiv([d.msg],1)));
